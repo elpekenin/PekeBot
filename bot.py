@@ -437,7 +437,8 @@ def inline_keyboard_handler(update: Update, context: CallbackContext):
         rows = old_text.split('\n')
         rows[0] = f"<a href='https://www.google.com/maps/search/?api=1&query={latitude},{longitude}'>{rows[0]}</a>"
         new_row = rows[1].split(',')
-        new_row[0] = reward
+        new_row[0] = f"<b>{reward}</b>"
+	new_row[1] = f"<i>{new_row[1]}</i>"
         rows[1] = ','.join(new_row)
 
         new_text_rows = []
